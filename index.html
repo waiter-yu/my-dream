@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0px;
+            font-size: 12px;
+            background: url("images/bg.gif") repeat center 36px;
+
+            text-align: center;
+            background-color: #c30230;
+        }
+
+        #content {
+            margin: 0 auto;
+            width: 960px;
+            background: url(images/content_bg.jpg) no-repeat left top;
+            height: 627px;
+        }
+
+        #content .tip1, #content .tip2, #content .tip3, #content .tip4, #content .tip5, #content .tip6, #content .tip7, #content .tip8 {
+            position: absolute;
+            width: 227px;
+            left: 200px;
+            top: 100px;
+        }
+
+        #content .tip1 .tip_h {
+            background: url(images/tip1_h.gif) no-repeat left top;
+        }
+
+        #content .tip1 .tip_h, #content .tip2 .tip_h, #content .tip3 .tip_h, #content .tip4 .tip_h, #content .tip5 .tip_h, #content .tip6 .tip_h, #content .tip7 .tip_h, #content .tip8 .tip_h {
+            width: 227px;
+            padding-top: 45px;
+            height: 23px;
+            text-align: left;
+            cursor: move;
+        }
+
+        #content .tip1 .tip_c {
+            background: url(images/tip1_c.gif) repeat-y;
+        }
+
+        #content .tip1 .tip_c, #content .tip2 .tip_c, #content .tip3 .tip_c, #content .tip4 .tip_c, #content .tip5 .tip_c, #content .tip6 .tip_c, #content .tip7 .tip_c, #content .tip8 .tip_c {
+            width: 200px;
+            padding-left: 12px;
+            padding-right: 15px;
+            min-height: 40px;
+            text-align: left;
+            line-height: 20px;
+            max-height: 160px;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow: hidden;
+        }
+
+        #content .tip1 .tip_f {
+            background: url(images/tip1_f.gif) no-repeat left top;
+        }
+
+        #content .tip1 .tip_f, #content .tip2 .tip_f, #content .tip3 .tip_f, #content .tip4 .tip_f, #content .tip5 .tip_f, #content .tip6 .tip_f, #content .tip7 .tip_f, #content .tip8 .tip_f {
+            width: 227px;
+            height: 53px;
+            padding-top: 20px;
+        }
+
+        #content .close, #content .close2 {
+            float: left;
+            font-size: 12px;
+            cursor: pointer;
+            color: #000000;
+        }
+
+        .clr {
+            clear: both;
+            overflow: auto;
+            display: block;
+            height: 0px;
+        }
+
+        #content .icon {
+            float: left;
+            width: 35px;
+            padding-left: 15px;
+            height: 35px;
+            text-align: center;
+        }
+
+        #content .name {
+            float: right;
+            padding-right: 15px;
+            text-align: right;
+            font-size: 14px;
+            line-height: 35px;
+            color: #C0F;
+        }
+
+        #content .num {
+            float: left;
+            padding-left: 7px;
+            width: 195px;
+        }
+    </style>
+
+</head>
+<body>
+<audio autoplay controls loop="loop" preload="auto"
+       src="1234.mp3">
+</audio>
+<div id="content">
+</div>
+<script src="common.js"></script>
+<script>
+    window.onload = function () {
+        var messages = [
+            {"id": 1, "name": "高大磊", "content": "代码两万行，走路两万里，喝水一千杯", "time": "2018-05-21"},
+            {"id": 2, "name": "卢储福", "content": "我想开个养猪场！希望可以开十个", "time": "2018-05-21"},
+            {"id": 3, "name": "雷震", "content": "赚TMD一个亿再说", "time": "2018-05-21"},
+            {"id": 4, "name": "陈晓玲", "content": "高薪就业，买房，买车", "time": "2018-05-21"},
+            {"id": 5, "name": "谢玉玲", "content": "吃饭，睡觉，打豆豆", "time": "2018-05-21"},
+            {"id": 6, "name": "黎子锐", "content": "争取把每个知识点学好吸收好！在毕业时可以找一个心仪的公司", "time": "2018-05-21"},
+            {"id": 7, "name": "梁嘉诚", "content": "这个目标很大，这张纸装不下", "time": "2018-05-21"},
+            {"id": 8, "name": "黄斯链", "content": "成为更棒的自己", "time": "2018-05-21"},
+            {"id": 9, "name": "全增城", "content": "好好学习，天天向上，努力向上", "time": "2018-05-21"},
+            {"id": 10, "name": "黄斯链", "content": "成为更棒的自己", "time": "2018-05-21"},
+            {"id": 11, "name": "左太宇", "content": "月薪8k", "time": "2018-05-21"},
+            {"id": 12, "name": "覃郁贞", "content": "希望在接下来的时间里，通过自己的努力，找到一份满意的工作", "time": "2018-05-21"},
+            {"id": 13, "name": "周敏", "content": "达到心中所想", "time": "2018-05-21"},
+            {"id": 14, "name": "甘炳超", "content": "好好学习，天天向上", "time": "2018-05-21"},
+            {"id": 15, "name": "陈琼", "content": "好好学习，不辜负家人，背水一战", "time": "2018-05-21"},
+            {"id": 16, "name": "梁达", "content": "走上人生巅峰，月薪过万", "time": "2018-05-21"},
+            {"id": 17, "name": "赵旭婕", "content": "薪资4000-5000", "time": "2018-05-21"},
+            {"id": 18, "name": "梅睿", "content": "持久", "time": "2018-05-21"},
+            {"id": 19, "name": "朱威力", "content": "很简单：找个好工作", "time": "2018-05-21"},
+            {"id": 20, "name": "朱良魁", "content": "成功就业，月薪过万", "time": "2018-05-21"},
+            {"id": 21, "name": "黄彩仙", "content": "好好学习，毕业后，希望找到一份好的工作，高薪工作", "time": "2018-05-21"},
+            {"id": 22, "name": "蔡志华", "content": "扎实学好知识，能让工作中不一脸懵逼就好！", "time": "2018-05-21"},
+            {"id": 23, "name": "李向超", "content": "远大目标，一定要把杰哥气死", "time": "2018-05-21"},
+            {"id": 24, "name": "张耀轩", "content": "毕业，找到工作，买到房子，买到车子，再找个妹子", "time": "2018-05-21"},
+            {"id": 25, "name": "丁增杭", "content": "年前顺利工作，回家过好年", "time": "2018-05-21"},
+            {"id": 26, "name": "余仁平", "content": "有天我会踏着七色祥云来娶你", "time": "2018-05-21"},
+            {"id": 27, "name": "汤天浩", "content": "现实很现实，高薪就业", "time": "2018-05-21"},
+            {"id": 28, "name": "甘銎生", "content": "四个月的汗水换来一生幸福", "time": "2018-05-21"},
+            {"id": 29, "name": "谢乐芳", "content": "找到一份月薪过8k的工作", "time": "2018-05-21"},
+            {"id": 30, "name": "廖艳飞", "content": "希望下次考试超过前一次的排名，顺利毕业，找到好工作", "time": "2018-05-21"},
+            {"id": 31, "name": "余灿", "content": "努力学习，不悔己选", "time": "2018-05-21"},
+            {"id": 32, "name": "殷仁", "content": "路漫漫其修远兮，吾将上下而求索", "time": "2018-05-21"},
+            {"id": 33, "name": "万云龙", "content": "不忘初心方得始终", "time": "2018-05-21"},
+            {"id": 34, "name": "彭帅", "content": "找到好工作", "time": "2018-05-21"},
+            {"id": 35, "name": "梁显贵", "content": "毕业后顺利工作，8k", "time": "2018-05-21"},
+            {"id": 36, "name": "林泽鸿", "content": "当上CEO，迎娶白富美，走上人生巅峰", "time": "2018-05-21"},
+            {"id": 37, "name": "洪自强", "content": "找一份月薪过万的工作", "time": "2018-05-21"},
+            {"id": 38, "name": "李海琼", "content": "在传智这半年时间里，能把前端这门技术学好，毕业后能找到好工作", "time": "2018-05-21"},
+            {"id": 39, "name": "余练", "content": "努力学习，尽快月薪上万", "time": "2018-05-21"},
+            {"id": 40, "name": "吴闻军", "content": "找到好工作，不负当初的决定", "time": "2018-05-21"},
+            {"id": 41, "name": "余斯敏", "content": "高薪就业", "time": "2018-05-21"},
+            {"id": 42, "name": "李志强", "content": "高薪就业", "time": "2018-05-21"},
+            {"id": 43, "name": "罗毅", "content": "毕业尽量15k吧", "time": "2018-05-21"},
+            {"id": 44, "name": "尤文雄", "content": "目标薪资8k", "time": "2018-05-21"},
+            {"id": 45, "name": "伍楚盈", "content": "没有退路，努力学习，努力赚钱", "time": "2018-05-21"},
+            {"id": 46, "name": "曾培培", "content": "月入过万，找到一份好工作，不累，不加班", "time": "2018-05-21"},
+            {"id": 47, "name": "李炜业", "content": "开公司，做大老板", "time": "2018-05-21"},
+            {"id": 48, "name": "张享乐", "content": "月薪1w+，没有蛀牙", "time": "2018-05-21"},
+            {"id": 49, "name": "宋涛", "content": "朝九晚五，月入8000.00+", "time": "2018-05-21"},
+            {"id": 50, "name": "曾祥铭", "content": "毕业后找到工作", "time": "2018-05-21"},
+            {"id": 51, "name": "廖梦苑", "content": "毕业后，找到8k以上的工作", "time": "2018-05-21"},
+            {"id": 52, "name": "谢明荣", "content": "月入过万，当个月光，自己过完一生", "time": "2018-05-21"},
+            {"id": 53, "name": "李诗瑶", "content": "好好学习，买买买", "time": "2018-05-21"},
+            {"id": 54, "name": "温创兴", "content": "项计算机专业学生看齐，以后毕业工资有个7,8k", "time": "2018-05-21"},
+            {"id": 55, "name": "黄崇龙", "content": "好好学习，找到一份好工作", "time": "2018-05-21"},
+            {"id": 56, "name": "尹伊", "content": "努力学习，优秀的完成一个作品，进入一个优秀的外企", "time": "2018-05-21"},
+            {"id": 57, "name": "王信鑫", "content": "目标薪资8千", "time": "2018-05-21"},
+            {"id": 58, "name": "林鸣", "content": "薪资1万左右吧", "time": "2018-05-21"},
+            {"id": 59, "name": "雷明芬", "content": "高薪就业", "time": "2018-05-21"},
+            {"id": 60, "name": "姬淑梅", "content": "做一个自信有追求的自己，找个月薪8千的工作。加油！加油！加油！", "time": "2018-05-21"},
+            {"id": 61, "name": "陈锐坚", "content": "6789", "time": "2018-05-21"},
+            {"id": 62, "name": "吴宇海", "content": "找个漂亮小姐姐，月入过8k", "time": "2018-05-21"},
+            {"id": 63, "name": "尹润鸿", "content": "好好学习，天天向上。广州7000，江门3500", "time": "2018-05-21"},
+            {"id": 64, "name": "李家明", "content": "努力奋斗，8k-9k", "time": "2018-05-21"},
+            {"id": 65, "name": "袁旭", "content": "希望如我所愿，多年后会感激现在的自己", "time": "2018-05-21"},
+            {"id": 66, "name": "刘子祺", "content": "去硅谷创业", "time": "2018-05-21"},
+            {"id": 67, "name": "江宏", "content": "2018一定要把前端学好", "time": "2018-05-21"},
+            {"id": 68, "name": "曾文美", "content": "找一份薪水不错的工作", "time": "2018-05-21"},
+            {"id": 69, "name": "原启堂", "content": "要求不高，买了不心疼，花了不心疼，吃了不肚子疼", "time": "2018-05-21"},
+            {"id": 70, "name": "朱子可", "content": "挣他一个亿", "time": "2018-05-21"},
+            {"id": 71, "name": "詹明鸿", "content": "键盘敲烂，月薪过万", "time": "2018-05-21"},
+            {"id": 72, "name": "何程辉", "content": "成为全栈，路途遥远", "time": "2018-05-21"},
+            {"id": 73, "name": "林俊杰", "content": "键盘敲烂，月薪过万", "time": "2018-05-21"},
+            {"id": 74, "name": "冯国强", "content": "月薪过万", "time": "2018-05-21"},
+            {"id": 75, "name": "廖亿晓", "content": "学好学好学好，重要事情说三遍", "time": "2018-05-21"},
+            {"id": 76, "name": "张露", "content": "一.8k，二.15k，三.为所欲为", "time": "2018-05-21"},
+            {"id": 77, "name": "郑康楠", "content": "月薪过万", "time": "2018-05-21"},
+            {"id": 78, "name": "樊成一", "content": "人生有梦，各自精彩", "time": "2018-05-21"},
+            {"id": 79, "name": "张涛", "content": "学无止境，做的更好", "time": "2018-05-21"},
+            {"id": 80, "name": "蒋波", "content": "目标薪资8k", "time": "2018-05-21"},
+            {"id": 81, "name": "林墒淳", "content": "心养性平天下", "time": "2018-05-21"},
+            {"id": 82, "name": "谭海潮", "content": "月薪20k", "time": "2018-05-21"},
+            {"id": 83, "name": "周静", "content": "顺利结业，顺利找到理想工作", "time": "2018-05-21"},
+            {"id": 84, "name": "杨梅", "content": "以后月入过万", "time": "2018-05-21"},
+            {"id": 85, "name": "崔健", "content": "努力吧少年，键盘敲烂，月薪过万", "time": "2018-05-21"},
+            {"id": 86, "name": "蔡志亮", "content": "顺利找到一份工作，月入8k", "time": "2018-05-21"},
+            {"id": 87, "name": "何灿星", "content": "月入10k", "time": "2018-05-21"},
+            {"id": 88, "name": "朱凯波", "content": "高新码农，不脱发", "time": "2018-05-21"},
+            {"id": 89, "name": "柳惠熙", "content": "不忘初心，方得始终。学业有成，步步高升", "time": "2018-05-21"},
+            {"id": 90, "name": "张润", "content": "月薪8k就好", "time": "2018-05-21"},
+            {"id": 91, "name": "钟家庆", "content": "月薪破万", "time": "2018-05-21"},
+            {"id": 92, "name": "祝彩萍", "content": "买买买", "time": "2018-05-21"}
+        ];
+        //先获取最外面的div----content
+        var content = my$("content");
+
+        function f1(i) {
+            var dt = messages[i];
+            //创建div
+            var dvObj = document.createElement("div");
+            //加入到content中
+            content.appendChild(dvObj);
+            //设置id和类样式
+            dvObj.id = "cc" + i;
+            dvObj.className = "tip1";
+
+            dvObj.innerHTML = '<div class="tip_h" title="双击关闭纸条">' +
+                    '<div class="num">第[' + dt.id + ']条 ' + dt.time + '</div>' +
+                    '<div class="close" title="关闭纸条">×</div>' +
+                    '<div class="clr"></div>' +
+                    '</div>' +
+                    '<div class="tip_c">' + dt.content + '</div>' +
+                    '<div class="tip_f">' +
+                    '<div class="icon">' +
+                    '<img src="images/bpic_1.gif" alt="" title="">' +
+                    '</div>' +
+                    '<div class="name">' + dt.name + '</div>' +
+                    '<div class="clr"></div>' +
+                    '</div>';
+
+            //设置每个div的left和top属性值(随机的)
+            var x = parseInt(Math.random() * 600 + 300);
+            //top竟然是个window-----注意了-----
+            var y = parseInt(Math.random() * 500);
+            //console.log(x,y);
+            dvObj.style.left = x + "px";
+            dvObj.style.top = y + "px";
+
+
+            //div中有没有x
+            //每个便签中的关闭的x
+            dvObj.getElementsByClassName("close")[0].onclick = function () {
+                this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+            };
+            //双击关闭纸条
+            dvObj.getElementsByClassName("tip_h")[0].ondblclick = function () {
+                this.parentNode.parentNode.removeChild(this.parentNode);
+            };
+            //点击纸条,改变层级
+            dvObj.onclick = clickHandle;
+        }
+
+        function f2(fn) {
+            var id = setInterval(function () {
+
+            }, 50);
+
+            fn(id - 2)
+        }
+
+        setInterval(function () {
+            f2(f1)
+        }, 1800);
+        var zIndex = 0;//改变层级
+        function clickHandle() {
+            zIndex++;
+            this.style.zIndex = zIndex;
+
+        }
+
+    }
+
+</script>
+</body>
+</html>
